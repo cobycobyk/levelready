@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <div className="nav">
-      <div className="nav__company">
+      <Link to="/" className="nav__company">
         <div className="nav__logo">
           <img src="https://i.imgur.com/pg0ZLwR.png" alt="logo" width={65} />
         </div>
@@ -20,7 +20,7 @@ export default function NavBar({ user, setUser }) {
           <h3>LevelReady</h3>
           <p>Esports Ranking and Recruiting</p>
         </div>
-      </div>
+      </Link>
       <div className="nav__search">
         <SearchIcon className="nav__searchIcon" />
         <input className="nav__searchInput" type="text" placeholder="Search" />

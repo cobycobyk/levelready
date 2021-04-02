@@ -19,6 +19,8 @@
   align-items: center;
   margin-right: 10px;
   margin-left: 15px;
+  text-decoration: none;
+  color: white;
 }
 
 .nav__search {
