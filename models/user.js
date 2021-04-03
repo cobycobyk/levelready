@@ -4,6 +4,10 @@ const bcrypt = require('bcrypt');
 
 SALT_ROUNDS = 6;
 
+const interestSchema = new Schema({
+  content: String,
+}, {timestamps: true})
+
 const userSchema = new Schema({
   name: {type: String, required: true},
   email: {
@@ -18,7 +22,15 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-  }
+  },
+  bio: String,
+  account: String,
+  username: String,
+  age: Number,
+  occupation: String,
+  zip: Number,
+  gradyear: Number,
+  interests: [interestSchema]
 }, {
   timestamps: true,
   toJSON: {
