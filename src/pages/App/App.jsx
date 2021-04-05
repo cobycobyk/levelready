@@ -6,6 +6,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import Nav from "../../components/Nav/Nav";
 import HomePage from "../HomePage/HomePage";
+import RegisterPage from "../RegisterPage/RegisterPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,6 +18,9 @@ export default function App() {
         <Switch>
           <Route path="/login">
             <AuthPage setUser={setUser} />
+          </Route>
+          <Route path="/register">
+            <RegisterPage setUser={setUser} />
           </Route>
           <Route path="/profile">
             <ProfilePage user={user} />

@@ -1,0 +1,36 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register__title {
+  margin-top: 15px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.steps > .number {
+  margin: 10px 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #dadada;
+  box-sizing: border-box;
+  height: 109px;
+  width: 109px;
+  text-align: center;
+}
+
+#one {
+  background-color: #ffb600;
+}
+
+#two {
+  background-color: #ff9100;
+}

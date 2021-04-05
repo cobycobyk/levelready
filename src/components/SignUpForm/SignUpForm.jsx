@@ -1,103 +1,98 @@
-import { useState } from "react";
-import { signUp } from "../../utilities/users-service";
-import { useHistory } from "react-router-dom";
+import "./SignUpForm.css";
+import { Link } from "react-router-dom";
 
-export default function SignUp({ setUser, showLogin, setShowLogin }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirm: "",
-  });
-  const history = useHistory();
-
-  const [error, setError] = useState("");
-
-  async function handleSubmit(evt) {
-    evt.preventDefault();
-    try {
-      delete formData.confirm;
-      const user = await signUp(formData);
-      setUser(user);
-      history.push("/");
-    } catch {
-      //can be catch (err)
-      //an error occured
-      setError("Sign Up Failed - Try Again");
-    }
-  }
-
-  function handleChange(evt) {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
-    setError("");
-  }
-
-  const disable = formData.password !== formData.confirm;
+export default function SignUpForm1({ handleSelect }) {
+  const values = ["Player"];
   return (
-    <div className="wrapper fadeInDown">
-      <div id="formContent" onSubmit={handleSubmit}>
+    <div className="signup1">
+      <div className="cards">
         <div className="fadeIn first">
-          <img src="https://i.imgur.com/W9JYIXE.png" alt="logo" width="60" />
+          <button
+            type=""
+            className="accountCardButton , playercard"
+            onClick={(e) => handleSelect("Player")}
+          >
+            <div className="accountCard">
+              <img
+                className="account__pic"
+                src="https://i.imgur.com/pg0ZLwR.png"
+                alt="logo"
+                width="200"
+              />
+              <div className="account__title">Player</div>
+              <div className="account__desc">
+                For Players that want to get recruited and scouted. Can also see
+                their gameplay insights
+              </div>
+            </div>
+          </button>
         </div>
-        <form>
-          <input
-            type="text"
-            id="login"
-            placeholder="name"
-            className="fadeIn second"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            id="email"
-            placeholder="email"
-            className="fadeIn third"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            id="password"
-            placeholder="password"
-            className="fadeIn fourth"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            id="password"
-            placeholder="confirm password"
-            className="fadeIn fifth"
-            name="confirm"
-            value={formData.confirm}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="submit"
-            placeholder="name"
-            className="fadeIn sixth"
-            disabled={disable}
-            value="Sign Up"
-          />
-        </form>
-        <p className="error-message">&nbsp;{error}</p>
-        <div id="formFooter">
-          <h5>Already a user?</h5>
-          <input
-            type="submit"
-            className="underlineHover"
-            onClick={() => setShowLogin(!showLogin)}
-            value="Login"
-          />
+        <div className="fadeIn first">
+          <button
+            className="accountCardButton , coachcard"
+            onClick={(e) => handleSelect("Coach")}
+          >
+            <div className="accountCard">
+              <img
+                className="account__pic"
+                src="https://i.imgur.com/pg0ZLwR.png"
+                alt="logo"
+                width="200"
+              />
+              <div className="account__title">Coach</div>
+              <div className="account__desc">
+                For coaches that want to see insights into potential players and
+                see team insights
+              </div>
+            </div>
+          </button>
         </div>
+        <div className="fadeIn first">
+          <button
+            className="accountCardButton , scoutcard"
+            onClick={(e) => handleSelect("Scout")}
+          >
+            <div className="accountCard">
+              <img
+                className="account__pic"
+                src="https://i.imgur.com/pg0ZLwR.png"
+                alt="logo"
+                width="200"
+              />
+              <div className="account__title">Scout/Recruiter</div>
+              <div className="account__desc">
+                For scouts and recruiters that want to get scouting reports for
+                potential telent and contact with players
+              </div>
+            </div>
+          </button>
+        </div>
+        <div className="fadeIn first">
+          <button
+            className="accountCardButton , eventcard"
+            onClick={(e) => handleSelect("Event Organizer")}
+          >
+            <div className="accountCard">
+              <img
+                className="account__pic"
+                src="https://i.imgur.com/pg0ZLwR.png"
+                alt="logo"
+                width="200"
+              />
+              <div className="account__title">Event Organizer</div>
+              <div className="account__desc">
+                For event organizers to lookup and contact players to join their
+                events
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div id="formFooter">
+        <h5>Already a user?</h5>
+        <Link to="/login" className="underlineHover login__signup">
+          Login
+        </Link>
       </div>
     </div>
   );

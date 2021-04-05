@@ -1,0 +1,41 @@
+.cards {
+  display: flex;
+  justify-content: center;
+}
+.accountCardButton {
+  width: 370px;
+  height: 531px;
+  border: none;
+  margin: 30px 10px;
+  cursor: pointer;
+}
+
+.playercard {
+  background-color: #ffb600;
+}
+.coachcard {
+  background-color: #ff9100;
+}
+.scoutcard {
+  background-color: #ff6d00;
+}
+.eventcard {
+  background-color: #ff4800;
+}
+
+.accountCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.account__title {
+  color: white;
+  font-size: 35px;
+}
+
+.account__desc {
+  color: black;
+  font-size: 20px;
+}

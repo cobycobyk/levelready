@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as usersService from "../../utilities/users-service";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import "./LoginForm.css";
 
 export default function LogIn({ setUser, setShowLogin, showLogin }) {
@@ -63,12 +63,9 @@ export default function LogIn({ setUser, setShowLogin, showLogin }) {
         <p className="error-message">&nbsp;{error}</p>
         <div id="formFooter">
           <h5>Need to create an account?</h5>
-          <input
-            type="submit"
-            className="underlineHover"
-            onClick={() => setShowLogin(!showLogin)}
-            value="Sign Up"
-          />
+          <Link to="/register" className="underlineHover login__signup">
+            Sign Up
+          </Link>
         </div>
       </div>
     </div>

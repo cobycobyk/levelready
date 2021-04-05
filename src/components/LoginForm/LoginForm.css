@@ -44,13 +44,14 @@ h2.inactive {
 }
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid var(--coral);
+  border-bottom: 2px solid orangered;
 }
 /* FORM TYPOGRAPHY*/
 input[type="button"],
 input[type="submit"],
-input[type="reset"] {
-  background-color: var(--coral);
+input[type="reset"],
+.login__signup {
+  background-color: orangered;
   border: none;
   color: white;
   padding: 15px 80px;
