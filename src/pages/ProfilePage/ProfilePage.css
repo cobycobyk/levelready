@@ -1,0 +1,75 @@
+.profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profmiddle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.higher {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 35px;
+  width: 650px;
+  height: 100px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 15px;
+  background-color: orangered;
+  width: 200px;
+  height: 90px;
+}
+
+.middle {
+  display: flex;
+}
+
+.breakdown {
+  width: 500px;
+  height: 500px;
+  background-color: lightgray;
+}
+
+.title {
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100px;
+}
+
+.title > h1,
+h4 {
+  color: black;
+  margin-left: 10px;
+}
+
+.graph {
+  margin-top: 25px;
+}
+
+.graphimage {
+  max-width: 500px;
+}
+
+.datasource {
+  margin-left: 20px;
+}
+
+.low > img {
+  margin-top: 35px;
+  width: 600px;
+}
+
+.detailss > img {
+  width: 700px;
+}

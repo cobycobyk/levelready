@@ -30,7 +30,8 @@ const userSchema = new Schema({
   occupation: String,
   zip: Number,
   gradyear: Number,
-  interests: [interestSchema]
+  interests: [interestSchema],
+  order: String
 }, {
   timestamps: true,
   toJSON: {

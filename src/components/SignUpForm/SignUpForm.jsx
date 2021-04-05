@@ -2,7 +2,6 @@ import "./SignUpForm.css";
 import { Link } from "react-router-dom";
 
 export default function SignUpForm1({ handleSelect }) {
-  const values = ["Player"];
   return (
     <div className="signup1">
       <div className="cards">

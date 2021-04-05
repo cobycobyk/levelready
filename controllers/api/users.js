@@ -6,6 +6,7 @@ module.exports = {
   create,
   login,
   checkToken,
+  update,
 };
 
 //for TESTING purposes only
@@ -14,6 +15,11 @@ function checkToken(req, res) {
   res.json(req.exp);
 }
 
+async function update(req, res) {
+  const user = await User.findByIdAndUpdate(req.user._id, req.body, {new: true});
+  const token = createJWT(user);
+  res.status(200).json(token);
+}
 async function create(req, res) {
   try {
     //add the user to the db

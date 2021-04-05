@@ -1,0 +1,17 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage > img {
+  margin: 0;
+}
+
+.ranks {
+  display: flex;
+  justify-content: center;
+}
+
+.ranks > img {
+  height: 900px;
+}

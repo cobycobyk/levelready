@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ProfilePage({ user }) {
+export default function ProfileDetail({ user }) {
   const classes = useStyles();
 
   return (
@@ -38,7 +38,7 @@ export default function ProfilePage({ user }) {
               Favorite
             </Button>
             <Button size="small" color="primary">
-              <Link to="/messages">Message</Link>
+              Message
             </Button>
           </CardActions>
           <CardContent className="profmiddle">
@@ -66,57 +66,9 @@ export default function ProfilePage({ user }) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <Link to="/profiledetail" className="underlineHover login__signup">
-          See more details
-        </Link>
       </Card>
-      <div className="stats">
-        <div className="higher">
-          <div className="score">
-            LevelReady Score
-            <hr />
-            <h1>84.3</h1>
-          </div>
-          <div className="score">
-            Total Games Played
-            <hr />
-            <h1>5406</h1>
-          </div>
-          <div className="score">
-            Total Wins
-            <hr />
-            <h1>1150</h1>
-          </div>
-        </div>
-        <div className="middle">
-          <div className="breakdown">
-            <div className="title">
-              <h1>Games Breakdown</h1>
-              <h4> Last 6 Months</h4>
-            </div>
-            <div className="graph">
-              <img
-                className="graphimage"
-                src="https://i.imgur.com/x3Z28F3.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="datasource">
-            <img
-              src="https://i.imgur.com/rtP9jRB.png"
-              alt=""
-              className="data"
-            />
-          </div>
-        </div>
-        <div className="low">
-          <img
-            src="https://i.imgur.com/pxSMNaI.png"
-            alt=""
-            className="gamesplayed"
-          />
-        </div>
+      <div className="detailss">
+        <img src="https://i.imgur.com/b1Ahpzn.png" alt="" />
       </div>
     </div>
   );

@@ -1,0 +1,31 @@
+.upgrade {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.plan {
+  text-decoration: underline;
+  color: white;
+  font-size: 30px;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin: 30px 30px;
+  border-radius: 15px;
+  background-color: #ff9100;
+}
+
+.plans > ul > li {
+  margin: 30px;
+}
+
+.upagrade__title {
+  text-align: center;
+}

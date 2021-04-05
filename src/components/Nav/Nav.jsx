@@ -1,15 +1,26 @@
 import "./Nav.css";
 import * as userService from "../../utilities/users-service";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Avatar } from "@material-ui/core";
-import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@material-ui/icons/SearchOutlined";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, handleLogOut, setStep }) {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   function handleLogOut() {
     userService.logOut();
     setUser(null);
   }
-
   return (
     <div className="nav">
       <Link to="/" className="nav__company">
@@ -26,16 +37,38 @@ export default function NavBar({ user, setUser }) {
         <input className="nav__searchInput" type="text" placeholder="Search" />
       </div>
       <div className="nav__menu">
-        <Link to="/">Player Ranks</Link>
-        <Link to="/">Pricing</Link>
+        <Link to="/ranks">Player Ranks</Link>
+        <Link to="/pricing">Pricing</Link>
         <Link to="/">Contact</Link>
         <Link to="/">About</Link>
         {user ? (
-          <Avatar
-            className="avatar"
-            src={user.avatar}
-            alt={user.display_name}
-          />
+          <div className="nav_menu">
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              Account
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>
+                <Link to="/profile">Profile</Link>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link to="/messages">My Messages</Link>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link to="/upgrade">Upgrade</Link>
+              </MenuItem>
+              <MenuItem onClick={handleLogOut}>Logout</MenuItem>
+            </Menu>
+          </div>
         ) : (
           <>
             <Link to="/login" className="nav__login">

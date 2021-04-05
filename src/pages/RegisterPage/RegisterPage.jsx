@@ -1,12 +1,18 @@
 import "./RegisterPage.css";
 import { useState } from "react";
 import { signUp } from "../../utilities/users-service";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import SignUpForm2 from "../../components/SignUpForm/SignUpForm2";
+import SignUpForm3 from "../../components/SignUpForm/SignUpForm3";
 
-export default function RegisterPage({ setUser }) {
-  const [step, setStep] = useState(1);
+export default function RegisterPage({
+  step,
+  setStep,
+  user,
+  setUser,
+  handleUpdateUser,
+}) {
   const [formData, setFormData] = useState({
     account: "",
     username: "",
@@ -29,7 +35,7 @@ export default function RegisterPage({ setUser }) {
       delete formData.confirm;
       const user = await signUp(formData);
       setUser(user);
-      history.push("/");
+      setStep(3);
     } catch {
       //can be catch (err)
       //an error occured
@@ -94,7 +100,24 @@ export default function RegisterPage({ setUser }) {
       </div>
     );
   } else if (step === 3) {
-    return <div className="register">register 3</div>;
+    return (
+      <div className="register">
+        <h1 className="register__title">Register for LevelReady</h1>
+        <div className="steps">
+          <div id="check" className="number">
+            ✔️
+          </div>
+          <div id="check" className="number">
+            ✔️
+          </div>
+          <div id="three" className="number">
+            3
+          </div>
+        </div>
+        <h3 className="register__title">Choose Your Plan</h3>
+        <SignUpForm3 handleUpdateUser={handleUpdateUser} user={user} />
+      </div>
+    );
   } else {
     return (
       <div className="register">Something went wrong, please try again</div>

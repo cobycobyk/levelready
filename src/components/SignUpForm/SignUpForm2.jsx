@@ -11,136 +11,117 @@ export default function SignUpForm2({
 }) {
   const disable = formData.password !== formData.confirm;
   return (
-    <div className="plan">
-      <div className="wrapper fadeInDown">
-        <div id="formContent" onSubmit={handleSubmit}>
-          <div className="fadeIn first">
-            <img src="https://i.imgur.com/W9JYIXE.png" alt="logo" width="60" />
+    <div className="wrapper fadeInDown information">
+      <div className="information" onSubmit={handleSubmit}>
+        <form className="info">
+          <div className="forms">
+            <div className="left">
+              <h3>Register for an Account (required)</h3>
+              <input
+                type="text"
+                id="login"
+                placeholder="Name"
+                className="fadeIn second"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                className="fadeIn third"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                id="login"
+                placeholder="Username"
+                className="fadeIn second"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className="fadeIn fourth"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="password"
+                id="password"
+                placeholder="Confirm Password"
+                className="fadeIn fifth"
+                name="confirm"
+                value={formData.confirm}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="right">
+              <h3>Other Information</h3>
+              <input
+                type="text"
+                id="login"
+                placeholder="Age"
+                className="fadeIn second"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                id="login"
+                placeholder="Occupation"
+                className="fadeIn third"
+                name="occupation"
+                value={formData.occupation}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                id="login"
+                placeholder="Zipcode"
+                className="fadeIn fourth"
+                name="zip"
+                value={formData.zip}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                id="login"
+                placeholder="Graduating Year"
+                className="fadeIn fifth"
+                name="gradyear"
+                value={formData.gradyear}
+                onChange={handleChange}
+              />
+            </div>
           </div>
-          <form>
-            <input
-              type="text"
-              id="login"
-              placeholder="name"
-              className="fadeIn second"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              placeholder="email"
-              className="fadeIn third"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="password"
-              id="password"
-              placeholder="password"
-              className="fadeIn fourth"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="password"
-              id="password"
-              placeholder="confirm password"
-              className="fadeIn fifth"
-              name="confirm"
-              value={formData.confirm}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="submit"
-              placeholder="name"
-              className="fadeIn sixth"
-              disabled={disable}
-              value="Sign Up"
-            />
-          </form>
-          <p className="error-message">&nbsp;{error}</p>
-          <div id="formFooter">
-            <input
-              type="text"
-              className="underlineHover login__signup"
-              value="< Back"
-              onClick={previousStep}
-            />
-          </div>
-        </div>
+          <input
+            type="submit"
+            placeholder="name"
+            className="underlineHover login__signup"
+            disabled={disable}
+            value="Sign Up"
+          />
+        </form>
       </div>
-      <div className="wrapper fadeInDown">
-        <div id="formContent" onSubmit={handleSubmit}>
-          <div className="fadeIn first">
-            <img src="https://i.imgur.com/W9JYIXE.png" alt="logo" width="60" />
-          </div>
-          <form>
-            <input
-              type="text"
-              id="login"
-              placeholder="name"
-              className="fadeIn second"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              placeholder="email"
-              className="fadeIn third"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="password"
-              id="password"
-              placeholder="password"
-              className="fadeIn fourth"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="password"
-              id="password"
-              placeholder="confirm password"
-              className="fadeIn fifth"
-              name="confirm"
-              value={formData.confirm}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="submit"
-              placeholder="name"
-              className="fadeIn sixth"
-              disabled={disable}
-              value="Sign Up"
-            />
-          </form>
-          <p className="error-message">&nbsp;{error}</p>
-          <div id="formFooter">
-            <button
-              className="underlineHover login__signup"
-              onClick={previousStep}
-            >
-              Back
-            </button>
-          </div>
-        </div>
+      <p className="error-message">&nbsp;{error}</p>
+      <div id="formFooter">
+        <button className="underlineHover login__signup" onClick={previousStep}>
+          Back
+        </button>
       </div>
     </div>
   );
