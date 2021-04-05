@@ -1,4 +1,4 @@
-## LevelReady ⭐⭐⭐⭐⭐
+## LevelReady 🎮🎮🎮🎮🎮
 
 Live Demo 👉 https://levelready.herokuapp.com/profiledetail
 
